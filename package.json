@@ -1,18 +1,20 @@
 {
-  "name": "twitch-auth-sample",
+  "name": "botijela-auth-test",
   "version": "1.0.0",
-  "description": "Twitch API Authentication Example using Node, Express, and Passport.",
+  "description": "Twitch API Authentication Example using Node, Passport, Express and Handlebars.",
   "main": "index.js",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "express": "^4.15.2",
+    "express-handlebars": "^7.1.2",
     "express-session": "^1.15.2",
     "handlebars": "^4.0.6",
-    "passport": "^0.3.2",
+    "passport": "^0.6.0",
     "passport-oauth": "^1.0.0",
     "request": "^2.81.0"
   },
-  "devDependencies": {},
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Twitch Interactive, Inc.",
