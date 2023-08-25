@@ -13,6 +13,9 @@ const TWITCH_SECRET    = process.env.CLIENT_SECRET;
 const SESSION_SECRET   = process.env.SESSION_SECRET;
 const CALLBACK_URL     = process.env.CALLBACK_URL;
 
+const PORT = 8080;
+const HOST = '0.0.0.0';
+
 // Initialize Express and middlewares
 var app = express();
 app.use(session({secret: SESSION_SECRET, resave: false, saveUninitialized: false}));
@@ -92,6 +95,6 @@ app.get('/', function (req, res) {
   }
 });
 
-app.listen(80, function () {
-  console.log('Twitch auth listening on port 80!')
+app.listen(PORT, HOST, function () {
+  console.log(`Twitch auth listening on port ${HOST}:${PORT}!`)
 });
