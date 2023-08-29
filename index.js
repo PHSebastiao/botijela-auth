@@ -79,7 +79,7 @@ passport.use('twitch', new OAuth2Strategy({
 ));
 
 // Set route to start OAuth link, this is where you define scopes to request
-app.get('/auth/twitch', passport.authenticate('twitch', { scope: 'chat:read chat:edit channel:read:redemptions channel:manage:redemptions moderator:manage:banned_users' }));
+app.get('/auth/twitch', passport.authenticate('twitch', { scope: 'chat:read chat:edit channel:read:redemptions channel:manage:redemptions moderator:manage:banned_users moderator:read:shoutouts moderator:manage:shoutouts moderator:read:chatters moderator:read:followers' }));
 
 // Set route for OAuth redirect
 app.get('/auth/twitch/callback', passport.authenticate('twitch', { successRedirect: '/', failureRedirect: '/' }));
