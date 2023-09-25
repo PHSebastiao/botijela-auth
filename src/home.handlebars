@@ -1,51 +1,49 @@
 <table>
-    <div class="container">
-        <h1>Usuário conectado</h1>
-        <div class="row">
-            <div class="col-6">
-                <label for="access-token">Access Token</label>
-                <p>{{accessToken}}</p>
-            </div>
-            <div class="col-6">
-                <label for="refresh-token">Refresh Token</label>
-                <p>{{refreshToken}}</p>
-            </div>
-            <div class="col-6">
-                <label for="display-name">Display Name</label>
-                <p>{{user.display_name}}</p>
-            </div>
-            <div class="col-6">
-                <label for="bio">Bio</label>
-                <p>{{user.description}}</p>
-            </div>
-            <div class="col-6">
-                <label for="pfp" class="d-block">Profile Picture</label>
-                <img
-                    src="{{user.profile_image_url}}"
-                    alt="Profile Img"
-                    width="100"
-                />
-            </div>
-        </div>
+  <div class="container">
+    <h1>Usuário conectado</h1>
+    <div class="row">
+      <div class="col-6">
+        <label for="access-token">Access Token</label>
+        <p id="access-token" style="display: none;">{{accessToken}}
+        </p>
+        <button
+          class="btn btn-sm btn-info"
+          onclick="toggleAccessToken()"
+        >🔍</button>
+      </div>
+      <div class="col-6">
+        <label for="refresh-token">Refresh Token</label>
+        <p id="refresh-token" style="display: none;">{{refreshToken}}
+        </p>
+        <button
+          class="btn btn-sm btn-info"
+          onclick="toggleRefreshToken()"
+        >🔍</button>
+      </div>
+      <div class="col-6">
+        <label for="display-name">Display Name</label>
+        <p>{{user.display_name}}</p>
+      </div>
+      <div class="col-6">
+        <label for="bio">Bio</label>
+        <p>{{user.description}}</p>
+      </div>
+      <div class="col-6">
+        <label for="pfp" class="d-block">Profile Picture</label>
+        <img src="{{user.profile_image_url}}" alt="Profile Img" width="100" />
+      </div>
     </div>
-    {{!-- <tr>
-        <th>Access Token</th>
-        <td>{{accessToken}}</td>
-    </tr>
-    <tr>
-        <th>Refresh Token</th>
-        <td>{{refreshToken}}</td>
-    </tr>
-    <tr>
-        <th>Display Name</th>
-        <td>{{user.display_name}}</td>
-    </tr>
-    <tr>
-        <th>Bio</th>
-        <td>{{user.description}}</td>
-    </tr>
-    <tr>
-        <th>Image</th>
-        <td><img src="{{user.profile_image_url}}" alt="Profile Img" width="100"></td>
-    </tr> --}}
+  </div>
 </table>
+
+<script>
+  function toggleAccessToken() { var accessTokenElement =
+  document.getElementById("access-token"); if (accessTokenElement.style.display
+  === "none" || accessTokenElement.style.display === "") {
+  accessTokenElement.style.display = "block"; } else {
+  accessTokenElement.style.display = "none"; } } function toggleRefreshToken() {
+  var refreshTokenElement = document.getElementById("refresh-token"); if
+  (refreshTokenElement.style.display === "none" ||
+  refreshTokenElement.style.display === "") { refreshTokenElement.style.display
+  = "block"; } else { refreshTokenElement.style.display = "none"; } }
+</script>
