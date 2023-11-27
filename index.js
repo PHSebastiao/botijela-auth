@@ -13,7 +13,7 @@ const SESSION_SECRET = process.env.SESSION_SECRET;
 const REDEMPTION_CALLBACK_URL = process.env.REDEMPTION_CALLBACK_URL;
 const GENERAL_CALLBACK_URL = process.env.GENERAL_CALLBACK_URL;
 
-const PORT = 8080;
+const PORT = 80;
 const HOST = "0.0.0.0";
 
 // Initialize Express and middlewares
@@ -92,14 +92,14 @@ passport.use(
 app.get(
   "/auth/redemption",
   passport.authenticate("redemption", {
-    scope: "chat:read channel:read:redemptions channel:manage:redemptions",
+    scope: "chat:read chat:edit channel:read:redemptions channel:manage:redemptions",
   })
 );
 app.get(
   "/auth/general",
   passport.authenticate("general", {
     scope:
-      "chat:read chat:edit channel:read:redemptions channel:manage:redemptions channel:edit:commercial channel:manage:raids channel:read:subscriptions channel:manage:vips moderator:manage:banned_users moderator:read:shoutouts moderator:manage:shoutouts moderator:read:chatters moderator:read:followers",
+      "chat:read chat:edit channel:read:redemptions channel:manage:redemptions channel:manage:moderators channel:edit:commercial channel:manage:raids channel:read:subscriptions channel:manage:vips moderator:manage:banned_users moderator:read:shoutouts moderator:manage:shoutouts moderator:read:chatters moderator:read:followers moderation:read user:manage:chat_color",
   })
 );
 
