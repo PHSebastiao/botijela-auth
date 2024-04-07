@@ -92,14 +92,14 @@ passport.use(
 app.get(
   "/auth/redemption",
   passport.authenticate("redemption", {
-    scope: "chat:read chat:edit channel:read:redemptions channel:manage:redemptions",
+    scope: "channel:bot chat:read chat:edit channel:read:redemptions channel:manage:redemptions",
   })
 );
 app.get(
   "/auth/general",
   passport.authenticate("general", {
     scope:
-      "chat:read chat:edit channel:read:redemptions channel:manage:redemptions channel:manage:moderators channel:edit:commercial channel:manage:raids channel:read:subscriptions channel:manage:vips moderator:manage:banned_users moderator:read:shoutouts moderator:manage:shoutouts moderator:read:chatters moderator:read:followers moderation:read user:manage:chat_color",
+      "channel:bot chat:read chat:edit channel:read:redemptions channel:manage:redemptions channel:manage:moderators channel:edit:commercial channel:manage:raids channel:read:subscriptions channel:manage:vips moderator:manage:banned_users moderator:read:shoutouts moderator:manage:shoutouts moderator:read:chatters moderator:read:followers moderation:read user:manage:chat_color",
   })
 );
 
