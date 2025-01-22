@@ -3,22 +3,17 @@
     <h1>Usuário conectado</h1>
     <div class="row">
       <div class="col-6">
+        <span class="text-danger">*Não exibir ou compartilhar tokens para ninguém</span>
         <label for="access-token">Access Token</label>
         <p id="access-token" style="display: none;">{{passport.accessToken}}
         </p>
-        <button
-          class="btn btn-sm btn-info"
-          onclick="toggleAccessToken()"
-        >🔍</button>
+        <button class="btn btn-sm btn-info" onclick="toggleAccessToken()">🔍</button>
       </div>
       <div class="col-6">
         <label for="refresh-token">Refresh Token</label>
         <p id="refresh-token" style="display: none;">{{passport.refreshToken}}
         </p>
-        <button
-          class="btn btn-sm btn-info"
-          onclick="toggleRefreshToken()"
-        >🔍</button>
+        <button class="btn btn-sm btn-info" onclick="toggleRefreshToken()">🔍</button>
       </div>
       <div class="col-6">
         <label for="display-name">Display Name</label>
@@ -37,13 +32,20 @@
 </table>
 
 <script>
-  function toggleAccessToken() { var accessTokenElement =
-  document.getElementById("access-token"); if (accessTokenElement.style.display
-  === "none" || accessTokenElement.style.display === "") {
-  accessTokenElement.style.display = "block"; } else {
-  accessTokenElement.style.display = "none"; } } function toggleRefreshToken() {
-  var refreshTokenElement = document.getElementById("refresh-token"); if
-  (refreshTokenElement.style.display === "none" ||
-  refreshTokenElement.style.display === "") { refreshTokenElement.style.display
-  = "block"; } else { refreshTokenElement.style.display = "none"; } }
+  function toggleAccessToken() {
+    var accessTokenElement =
+      document.getElementById("access-token"); if (accessTokenElement.style.display
+        === "none" || accessTokenElement.style.display === "") {
+      accessTokenElement.style.display = "block";
+    } else {
+      accessTokenElement.style.display = "none";
+    }
+  } function toggleRefreshToken() {
+    var refreshTokenElement = document.getElementById("refresh-token"); if
+      (refreshTokenElement.style.display === "none" ||
+      refreshTokenElement.style.display === "") {
+        refreshTokenElement.style.display
+        = "block";
+    } else { refreshTokenElement.style.display = "none"; }
+  }
 </script>

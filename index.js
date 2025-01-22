@@ -99,7 +99,7 @@ app.get(
   "/auth/general",
   passport.authenticate("general", {
     scope:
-      "channel:bot chat:read chat:edit channel:read:redemptions channel:manage:redemptions channel:manage:moderators channel:edit:commercial channel:manage:raids channel:read:subscriptions channel:manage:vips moderator:manage:banned_users moderator:read:shoutouts moderator:manage:shoutouts moderator:read:chatters moderator:read:followers moderation:read user:manage:chat_color",
+      "channel:bot chat:read chat:edit channel:read:redemptions channel:manage:redemptions channel:manage:moderators channel:edit:commercial channel:manage:raids channel:read:subscriptions channel:manage:vips moderator:manage:banned_users moderator:read:shoutouts moderator:manage:shoutouts moderator:read:chatters moderator:read:followers moderation:read user:manage:chat_color channel:read:predictions channel:manage:predictions user:write:chat user:manage:whispers user:read:whispers",
   })
 );
 
